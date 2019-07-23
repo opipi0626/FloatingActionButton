@@ -85,10 +85,10 @@ public abstract class BaseUseCaseActivity extends AppCompatActivity {
                         }
                     } else if (id == R.id.action_snack) {
                         showSnackbar("Test snackbar");
-                    } else if (id == R.id.action_add_item) {
+                    } /*else if (id == R.id.action_add_item) {
                         mSpeedDial.addActionItem(new SpeedDialActionItem.Builder((int) SystemClock.uptimeMillis(),
                                 R.drawable.ic_pencil_alt_white_24dp).create());
-                    } else if (id == R.id.action_remove_item) {
+                    }*/ else if (id == R.id.action_remove_item) {
                         int size = mSpeedDial.getActionItems().size();
                         if (size > 0) {
                             mSpeedDial.removeActionItem(size - 1);

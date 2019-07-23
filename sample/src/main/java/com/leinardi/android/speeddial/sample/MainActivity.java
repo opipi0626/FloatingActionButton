@@ -54,13 +54,14 @@ public class MainActivity extends BaseUseCaseActivity {
         if (addActionItems) {
             mSpeedDialView.addActionItem(new SpeedDialActionItem.Builder(R.id.fab_no_label, R.drawable
                     .ic_link_white_24dp)
+                    .setTheme(R.style.AppTheme_Purple)
                     .create());
 
             Drawable drawable = AppCompatResources.getDrawable(MainActivity.this, R.drawable.ic_custom_color);
             FabWithLabelView fabWithLabelView = mSpeedDialView.addActionItem(new SpeedDialActionItem.Builder(R.id
                     .fab_custom_color, drawable)
                     .setFabImageTintColor(ResourcesCompat.getColor(getResources(), R.color.inbox_primary, getTheme()))
-                    .setLabel(R.string.label_custom_color)
+                    .setLabel("one")
                     .setLabelColor(Color.WHITE)
                     .setLabelBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.inbox_primary,
                             getTheme()))
@@ -74,21 +75,21 @@ public class MainActivity extends BaseUseCaseActivity {
 
             mSpeedDialView.addActionItem(new SpeedDialActionItem.Builder(R.id.fab_long_label, R.drawable
                     .ic_lorem_ipsum)
-                    .setLabel("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
-                            "incididunt ut labore et dolore magna aliqua.")
+                    .setLabel("two")
                     .create());
 
             drawable = AppCompatResources.getDrawable(MainActivity.this, R.drawable.ic_add_white_24dp);
-            mSpeedDialView.addActionItem(new SpeedDialActionItem.Builder(R.id.fab_add_action, drawable)
+            /* mSpeedDialView.addActionItem(new SpeedDialActionItem.Builder(R.id.fab_add_action, drawable)
                     .setFabBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.material_green_500,
                             getTheme()))
                     .setLabel(R.string.label_add_action)
                     .setLabelBackgroundColor(Color.TRANSPARENT)
-                    .create());
+                    .create());*/
+
 
             mSpeedDialView.addActionItem(new SpeedDialActionItem.Builder(R.id.fab_custom_theme, R.drawable
                     .ic_theme_white_24dp)
-                    .setLabel(getString(R.string.label_custom_theme))
+                    .setLabel("three")
                     .setTheme(R.style.AppTheme_Purple)
                     .create());
 
@@ -126,7 +127,7 @@ public class MainActivity extends BaseUseCaseActivity {
                     case R.id.fab_custom_theme:
                         showToast(actionItem.getLabel(MainActivity.this) + " clicked!");
                         break;
-                    case R.id.fab_add_action:
+                    /*case R.id.fab_add_action:
                         mSpeedDialView.addActionItem(new SpeedDialActionItem.Builder(R.id.fab_replace_action,
                                 R.drawable.ic_replace_white_24dp)
                                 .setFabBackgroundColor(ResourcesCompat.getColor(getResources(), R.color
@@ -134,7 +135,7 @@ public class MainActivity extends BaseUseCaseActivity {
                                         getTheme()))
                                 .setLabel(getString(R.string.label_replace_action))
                                 .create(), ADD_ACTION_POSITION);
-                        break;
+                        break;*/
                     case R.id.fab_replace_action:
                         mSpeedDialView.replaceActionItem(new SpeedDialActionItem.Builder(R.id
                                 .fab_remove_action,
